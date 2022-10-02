@@ -11,3 +11,20 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.meteo-app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right-content {
+  display: flex;
+}
+
+.right-content div {
+  padding: 10px;
+  color: azure;
+  border: 1px solid white;
+  max-width: 45px;
+}
