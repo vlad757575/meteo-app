@@ -9,17 +9,50 @@ const url = "";
 
 // VARIABLES D'AFFICHAGE
 
-let temperature = document.querySelector('#temperature');
+let temperature = document.querySelector('#temperatureId');
 let ressenti = document.querySelector('feelslike');
 let nuages = document.querySelector('cloud');
 let pression = document.querySelector('pressure');
 let visibilite = document.querySelector('visibility');
 let humidite = document.querySelector('humidity');
 let vent = document.querySelector('wind');
-let city = document.querySelector('city');
+let city = document.querySelector('#locationId');
 
-
+let temperatureType;
 let cityChoice;
+
+let imperial = document.querySelector('#fahrenheit');
+let metric = document.querySelector('#celcius');
+
+
+
+// console.log(imperial);
+
+//TYPE OF TEMPERATURE DATA CONDITION 
+
+
+
+
+imperial.addEventListener("click", () => {
+
+    temperatureType = 'metric';
+    console.log(temperatureType + "ca fonctionne");
+
+})
+
+
+
+
+metric.addEventListener('click', () => {
+    temperatureType = "metric";
+    console.log(temperatureType + "ca fonctionne");
+})
+
+
+temperature.textContent = temperatureType;
+temperature.style.color = "white";
+console.log(temperatureType);
+
 
 // GEOLOCALISATION
 
@@ -47,10 +80,10 @@ if ('geolocation' in navigator) {
                     let windData = reponse.wind.speed;
                     let humidityData = reponse.main.humidity;
 
-                    console.log(reponse);
+                    console.log(temperatureData);
 
-                    document.querySelector('#temperature').textContent = temperatureData;
-                    document.querySelector('#city').textContent = cityData;
+                    document.querySelector('#temperatureId').textContent = temperatureData + " C°";
+                    document.querySelector('#cityId').textContent = cityData;
                 }
                 else {
                     alert("Something went wrong, please try later");
@@ -94,8 +127,8 @@ function getWeather(cityChoice) {
                 let windData = reponse.wind.speed;
                 let humidityData = reponse.main.humidity;
 
-                document.querySelector('#temperature').textContent = temperatureData;
-                document.querySelector('#city').textContent = cityData;
+                document.querySelector('#temperatureId').textContent = temperatureData;
+                document.querySelector('#locationId').textContent = cityData;
             }
             else {
                 console.log(error);

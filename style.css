@@ -4,27 +4,36 @@
   box-sizing: border-box;
 }
 
-body {
+.temperature {
+  font-size: 60px;
+  color: white;
+}
+.location {
+  font-size: 40px;
+  color: white;
+}
+
+/* body {
   min-height: 100vh;
   background-image: url("./public/pictures/main.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
-.meteo-app {
-  display: flex;
+/* 
   flex-direction: column;
   align-items: flex-end;
-}
+} */
 
 .right-content {
   display: flex;
 }
 
 .right-content div {
+  background: rgba(255, 255, 255, 0.2);
   padding: 10px;
   color: azure;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 45px;
 }

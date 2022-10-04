@@ -16,31 +16,36 @@
 
 <body>
     <div class="meteo-app">
-        <div class="right-content">
+        <div class="header">
+            <div class="right-content">
 
-            <div>°C </div>
-            <div>°F</div>
+                <div id="celcius">°C </div>
+                <div id="fahrenheit">°F</div>
+            </div>
+            <div class="search-form">
+                <form action="GET">
+                    <input type="text " class="cityChoice" placeholder="Your city ...">
+
+                    <button type="submit" class="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                </form>
+            </div>
         </div>
-        <form action="GET">
-            <input type="text " class="research" placeholder="Your city">
+        <div class="main-content">
+            <div>
+                <h2 class="temperature" id="temperatureId">26°</h2>
+                <h2 class="location" id="locationId"> Paris, FR</h2>
+                <p class="time"> Heure locale 17:37</p>
+                <p>humidité</p>
+                <p>Pression</p>
+                <p>Nuages</p>
+                <p>Visibilité</p>
 
-            <button type="submit">
-                <i class="fas fa-search"></i>
-            </button>
+                <p class="city"></p>
 
-        </form>
-
-        <div>
-            <h3>Détails</h3>
-            <h3>Sensation</h3>
-            <p>Vent</p>
-            <p>humidité</p>
-            <p>Pression</p>
-            <p>Nuages</p>
-            <p>Visibilité</p>
-            <p class="temps" id="temperature"></p>
-            <p class="city"></p>
-
+            </div>
         </div>
     </div>
     <div class="left-content"></div>

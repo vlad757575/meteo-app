@@ -1,0 +1,47 @@
+body {
+  min-height: 100vh;
+  background-image: url("./public/pictures/clouds2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.header input {
+  height: 46px;
+  background: transparent;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.header ::placeholder {
+  text-align: center;
+}
+
+button i {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  border: none;
+}
+
+.submit {
+  height: 46px;
+  width: 46px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40% auto;
+}
