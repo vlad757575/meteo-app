@@ -24,7 +24,7 @@ let city = document.querySelector('#locationId');
 let icone = document.getElementById('#logo-temps');
 let img = document.createElement('img');
 
-let temperatureType = "caca";
+let temperatureType = "";
 
 
 let imperial = document.querySelector('#fahrenheit');
@@ -85,12 +85,12 @@ if ('geolocation' in navigator) {
                     let visibilityData = reponse.visibility;
 
                     document.querySelector('#temperatureId').textContent = Math.round(temperatureData) + " C°";
-                    document.querySelector('#sensationId').textContent = "Sensation : " + Math.round(sensationData) + " C°";
-                    document.querySelector('#locationId').textContent = cityData;
-                    document.querySelector('#humidity').innerHTML = "<i class=\"fa-sharp fa-solid fa-droplet-percent\"></i> " + "Taux d'humidité : " + humidityData + " %";
-                    document.querySelector('#pression').textContent = "Pression : " + pressureData + " mbars";
-                    document.querySelector('#visibiliteId').innerHTML = "<i class=\"fa - sharp fa - solid fa - cloud - fog\"></i>" + "Visibilité : " + (visibilityData / 1000) + " km";
-                    document.querySelector('#windId').innerHTML = "<i class=\"fa-solid fa-wind\" style=\"color:black;\"></i> " + "Vent : " + (windData * 3.6) + " km/h";
+                    document.querySelector('#sensationId').textContent = Math.round(sensationData) + " C°";
+                    document.querySelector('#locationId').textContent = cityData + ", " + countryData;
+                    document.querySelector('#humidity').innerHTML = humidityData + " %";
+                    document.querySelector('#pression').textContent = pressureData + " mbars";
+                    document.querySelector('#visibiliteId').innerHTML = (visibilityData / 1000) + " km";
+                    document.querySelector('#windId').innerHTML = Math.round(windData * 3.6) + " km/h";
                     console.log(reponse);
                 }
                 else {
@@ -126,16 +126,7 @@ let changeCity = form.addEventListener('submit', (e) => {
 })
 
 
-// let changerDeVille = document.querySelector('#meteo-input');
-// changerDeVille.addEventListener('submit', () => {
-//     cityChoice = input.value;
-//     getWeather(cityChoice);
-//     input.value = "";
-// });
 
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-// })
 
 
 
@@ -160,21 +151,17 @@ function getWeather(cityChoice) {
                 let countryData = reponse.sys.country;
                 let sensationData = reponse.main.feels_like;
                 let pressureData = reponse.main.pressure;
-                let windData = reponse.wind.speed;
+                let windData = reponse.wind.speed * 2;
                 let humidityData = reponse.main.humidity;
+                let visibilityData = reponse.visibility;
 
-                document.querySelector('#temperatureId').textContent = Math.round(temperatureData);
                 document.querySelector('#temperatureId').textContent = Math.round(temperatureData) + " C°";
-                document.querySelector('#sensationId').textContent = "Sensation : " + Math.round(sensationData) + " C°";
-
-                document.querySelector('#locationId').textContent = cityData;
-                document.querySelector('#humidity').innerHTML = "<i class=\"fa-sharp fa-solid fa-droplet-percent\"></i> " + "Taux d'humidité : " + humidityData + " %";
-                document.querySelector('#pression').textContent = "Pression : " + pressureData + " mbars";
-
-                document.querySelector('#visibiliteId').innerHTML = "<i class=\"fa - sharp fa - solid fa - cloud - fog\"></i>" + "Visibilité : " + (visibilityData / 1000) + " km";
-
-
-                document.querySelector('#windId').innerHTML = "<i class=\"fa-solid fa-wind\" style=\"color:black;\"></i> " + "Vent : " + (windData * 3.6) + " km/h";
+                document.querySelector('#sensationId').textContent = Math.round(sensationData) + " C°";
+                document.querySelector('#locationId').textContent = cityData + ", " + countryData;
+                document.querySelector('#humidity').innerHTML = humidityData + " %";
+                document.querySelector('#pression').textContent = pressureData + " mbars";
+                document.querySelector('#visibiliteId').innerHTML = (visibilityData / 1000) + " km";
+                document.querySelector('#windId').innerHTML = Math.round(windData * 3.6) + " km/h";
 
             }
             else {
