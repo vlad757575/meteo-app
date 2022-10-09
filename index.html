@@ -12,6 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -23,27 +29,40 @@
                 <div id="fahrenheit">°F</div>
             </div>
             <div class="search-form">
-                <form action="GET">
-                    <input type="text " class="cityChoice" placeholder="Your city ...">
+                <form class="form">
+                    <input class="cityChoice" placeholder="Your city ..." id="meteo-input">
 
                     <button type="submit" class="submit">
                         <i class="fas fa-search"></i>
-                    </button>
 
                 </form>
+
             </div>
+        </div>
+        <div class="main-temp">
+
+            <div class="line">
+                <div></div>
+                <!-- </div> -->
+                <div class="temperature" id="temperatureId">26° </div>
+                <div class="location" id="locationId"> Paris, FR</div>
+            </div>
+
+            <img src="./public/pictures/sunny-200px.png" alt="" class="img">
         </div>
         <div class="main-content">
             <div>
-                <h2 class="temperature" id="temperatureId">26°</h2>
-                <h2 class="location" id="locationId"> Paris, FR</h2>
-                <p class="time"> Heure locale 17:37</p>
-                <p>humidité</p>
-                <p>Pression</p>
-                <p>Nuages</p>
-                <p>Visibilité</p>
+                <div class="detail">
+                    <small id="sensationId"></small>
+                    <p class="time"> Heure locale 17:37</p>
+                    <p id="humidity"> humidité</p>
+                    <p id="pression">Pression</p>
 
-                <p class="city"></p>
+                    <p id="windId"> Vent</p>
+                    <p id="visibiliteId">Visibilité</p>
+
+                    <p class="city"></p>
+                </div>
 
             </div>
         </div>
